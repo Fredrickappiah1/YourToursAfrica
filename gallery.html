@@ -181,10 +181,36 @@
         .mobile-menu {
             transform: translateX(100%);
             transition: transform 0.3s ease-in-out;
+            background-color: #ecfdf5 !important; /* light green background */
+            /* don't globally remove background images here; keep images for buttons */
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15) !important;
+            -webkit-backdrop-filter: none !important;
+            backdrop-filter: none !important;
+            opacity: 1 !important; /* ensure no transparency */
+            z-index: 9999 !important; /* keep above overlays */
         }
         
         .mobile-menu.open {
             transform: translateX(0);
+            opacity: 1 !important;
+            z-index: 9999 !important;
+        }
+
+        /* Force opaque background on menu and children to prevent transparency */
+        #mobile-menu, #mobile-menu * {
+            background: #ecfdf5 !important;
+            background-color: #ecfdf5 !important;
+            -webkit-backdrop-filter: none !important;
+            backdrop-filter: none !important;
+            opacity: 1 !important;
+            pointer-events: auto !important;
+        }
+
+        /* Preserve original Book Now styling inside mobile menu */
+        #mobile-menu .btn-primary {
+            background: linear-gradient(135deg, var(--african-green) 0%, #1a6b1a 100%) !important;
+            background-image: linear-gradient(135deg, var(--african-green) 0%, #1a6b1a 100%) !important;
+            color: #ffffff !important;
         }
         
         /* Testimonial cards */
@@ -265,7 +291,7 @@
         </div>
         
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-72 bg-white shadow-2xl md:hidden">
+        <div id="mobile-menu" class="mobile-menu fixed top-0 right-0 h-full w-72 bg-white shadow-2xl md:hidden z-60" style="z-index:60;">
             <div class="p-6">
                 <button id="close-menu" class="absolute top-6 right-6 text-[var(--african-black)]" aria-label="Close menu">
                     <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -696,24 +722,28 @@
             }
         }
 
-        // Mobile menu toggle
+        // Mobile menu toggle (defensive)
         function openMobileMenu() {
+            if (!mobileMenu) return;
             mobileMenu.classList.add('open');
             document.body.style.overflow = 'hidden';
         }
 
         function closeMobileMenu() {
+            if (!mobileMenu) return;
             mobileMenu.classList.remove('open');
             document.body.style.overflow = '';
         }
 
-        mobileMenuBtn.addEventListener('click', openMobileMenu);
-        closeMenuBtn.addEventListener('click', closeMobileMenu);
-        
+        if (mobileMenuBtn) mobileMenuBtn.addEventListener('click', openMobileMenu);
+        if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMobileMenu);
+
         // Close menu on link click
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', closeMobileMenu);
-        });
+        if (mobileNavLinks && mobileNavLinks.length) {
+            mobileNavLinks.forEach(link => {
+                link.addEventListener('click', closeMobileMenu);
+            });
+        }
 
         // Scroll reveal animation
         function revealOnScroll() {
