@@ -119,35 +119,7 @@
         }
         
         /* Slider Navigation Dots */
-        .slider-dots {
-            position: absolute;
-            bottom: 100px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-            gap: 12px;
-            z-index: 20;
-        }
-        
-        .slider-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.4);
-            border: 2px solid rgba(255, 255, 255, 0.6);
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        .slider-dot:hover {
-            background: rgba(255, 255, 255, 0.6);
-        }
-        
-        .slider-dot.active {
-            background: var(--african-yellow);
-            border-color: var(--african-yellow);
-            transform: scale(1.2);
-        }
+         
         
         @media (max-width: 768px) {
             .slider-dots {
@@ -264,7 +236,14 @@
                          alt="YourToursAfrica Logo" 
                          class="logo-bus w-20 h-20 sm:w-28 sm:h-28"
                          loading="lazy">
-                    <span class="font-display text-xl sm:text-2xl font-bold text-[var(--african-black)]" id="logo-text">YourToursAfrica</span>
+                    <div class="flex flex-col justify-center">
+        <span class="font-display text-xl sm:text-2xl font-bold text-[var(--african-black)] leading-none" id="logo-text">
+            YourToursAfrica
+        </span>
+        <span class="text-xs text-[var(--african-black)] tracking-wide">
+           A Refreshing & Different Travel Experience.
+        </span>
+    </div>
                 </a>
                 
                 <!-- Desktop Navigation -->
@@ -301,6 +280,7 @@
                     <a href="#gold-coast-packages" class="mobile-nav-link text-[var(--african-black)] text-xl font-medium hover:text-yellow-400 transition-colors">Packages</a>
                     <a href="#about" class="mobile-nav-link text-[var(--african-black)] text-xl font-medium hover:text-yellow-400 transition-colors">About</a>
                     <a href="#gallery" class="mobile-nav-link text-[var(--african-black)] text-xl font-medium hover:text-yellow-400 transition-colors">Gallery</a>
+                    <a href="#donate" class="mobile-nav-link text-[var(--african-black)] text-xl font-medium hover:text-yellow-400 transition-colors">Donate</a>
                     <a href="#contact" class="mobile-nav-link text-[var(--african-black)] text-xl font-medium hover:text-yellow-400 transition-colors">Contact</a>
                     <a href="#contact" class="btn-primary px-6 py-3 rounded-full text-white font-semibold text-center mt-4">Book Now</a>
                 </nav>
@@ -311,46 +291,125 @@
     <!-- Hero Section with Image Slider -->
     <section id="home" class="relative min-h-screen flex items-center justify-center hero-slider">
         <!-- Slider Slides -->
-        <div class="hero-slide active" style="background-image: url('slider4.jpeg');" data-title="Discover the <span class='text-yellow-400'>Heart</span> of Africa" data-subtitle="Experience breathtaking safaris, rich cultures, and unforgettable adventures across the African continent with our expertly curated tours."></div>
-        <div class="hero-slide" style="background-image: url('gallery28.jpeg');" data-title="Witness the <span class='text-yellow-400'>Great Migration</span>" data-subtitle="Follow millions of wildebeest across the Serengeti plains in one of nature's most spectacular events."></div>
-        <div class="hero-slide" style="background-image: url('slider8.jpeg');" data-title="Conquer <span class='text-yellow-400'>Kilimanjaro</span>" data-subtitle="Scale Africa's highest peak and stand on the roof of the continent with our expert mountain guides."></div>
-        <div class="hero-slide" style="background-image: url('slider10.jpeg');" data-title="Experience <span class='text-yellow-400'>Victoria Falls</span>" data-subtitle="Feel the thundering power of the world's largest waterfall and discover the magic of the Zambezi River."></div>
-        <div class="hero-slide" style="background-image: url('gallery35.jpeg');" data-title="Explore the <span class='text-yellow-400'>Sahara Desert</span>" data-subtitle="Journey through golden dunes and sleep under a blanket of stars in the world's largest desert."></div>
-        <div class="hero-slide" style="background-image: url('slider5.jpeg');" data-title="Explore the <span class='text-yellow-400'>Sahara Desert</span>" data-subtitle="Journey through golden dunes and sleep under a blanket of stars in the world's largest desert."></div>
+        <div class="hero-slide active" style="background-image: url('slider2.7.jpg')"></div>
+        <div class="hero-slide" style="background-image: url('slider2.9.jpg');" data-title="Witness the <span class='text-yellow-400'>Great Migration</span>" data-subtitle="Follow millions of wildebeest across the Serengeti plains in one of nature's most spectacular events."></div>
+        <div class="hero-slide" style="background-image: url('slider2.4.jpg');" data-title="Conquer <span class='text-yellow-400'>Kilimanjaro</span>" data-subtitle="Scale Africa's highest peak and stand on the roof of the continent with our expert mountain guides."></div>
+        <div class="hero-slide" style="background-image: url('slider2.3.jpg');" data-title="Experience <span class='text-yellow-400'>Victoria Falls</span>" data-subtitle="Feel the thundering power of the world's largest waterfall and discover the magic of the Zambezi River."></div>
+        <div class="hero-slide" style="background-image: url('slider2.5.jpg');" data-title="Explore the <span class='text-yellow-400'>Sahara Desert</span>" data-subtitle="Journey through golden dunes and sleep under a blanket of stars in the world's largest desert."></div>
+        <div class="hero-slide" style="background-image: url('slider2.8.jpg');" data-title="Explore the <span class='text-yellow-400'>Sahara Desert</span>" data-subtitle="Journey through golden dunes and sleep under a blanket of stars in the world's largest desert."></div>
 
         <!-- Gradient Overlay -->
         <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/30 z-10"></div>
         
         <!-- Slider Content -->
-        <div class="relative z-10 text-center px-4 max-w-5xl mx-auto">
-            <h1 id="hero-title" class="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 animate-fade-in-up">
-                Discover the <span class="text-yellow-400">Heart</span> of Africa
-            </h1>
-            <p id="hero-subtitle" class="text-lg sm:text-xl md:text-2xl text-gray-200 mb-10 max-w-3xl mx-auto animate-fade-in-up delay-200">
-                Experience breathtaking safaris, rich cultures, and unforgettable adventures across the African continent with our expertly curated tours.
-            </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up delay-300">
-                <a href="#tours" class="btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg shadow-lg">
-                    Explore Tours
-                </a>
-                <a href="#about" class="btn-secondary px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-lg">
-                    Learn More
-                </a>
-            </div>
-        </div>
+<div class="absolute inset-0 z-10 flex items-end justify-center px-4 pb-10 sm:pb-14">
+    <div class="flex flex-col sm:flex-row gap-4">
+        <a href="#tours"
+           class="btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg shadow-lg">
+            Explore Tours
+        </a>
+
+        <a href="#about"
+           class="btn-secondary px-8 py-4 rounded-full border-2 border-white text-white font-semibold text-lg">
+            Book Tours
+        </a>
+    </div>
+</div>
+<!-- Slider Dots -->
+
+
         
         <!-- Scroll indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-            </svg>
-        </div>
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
-            <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"/>
-            </svg>
+       
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 lg:py-28 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+                <!-- Image Grid -->
+                <div class="relative reveal">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="about1.jpeg" 
+                             alt="African sunset landscape" 
+                             class="rounded-2xl shadow-lg w-full h-48 object-cover"
+                             loading="lazy">
+                        <img src="about2.jpeg" 
+                             alt="Safari wildlife experience" 
+                             class="rounded-2xl shadow-lg w-full h-48 object-cover mt-8"
+                             loading="lazy">
+                        <img src="about3.jpeg" 
+                             alt="Cape Town coastal view" 
+                             class="rounded-2xl shadow-lg w-full h-48 object-cover -mt-4"
+                             loading="lazy">
+                        <img src="about4.jpeg" 
+                             alt="African cultural experience" 
+                             class="rounded-2xl shadow-lg w-full h-48 object-cover mt-4"
+                             loading="lazy">
+                    </div>
+                    <!-- Decorative element -->
+                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-yellow-400 rounded-full opacity-20 -z-10"></div>
+                    <div class="absolute -top-6 -left-6 w-24 h-24 bg-green-700 rounded-full opacity-20 -z-10"></div>
+                </div>
+                
+                <!-- Content -->
+                <div class="reveal">
+                    <span class="text-green-700 font-semibold text-sm uppercase tracking-wider">About Us</span>
+                    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-6">
+                        Your Gateway to <span class="text-green-700">Authentic</span> African Adventures
+                    </h2>
+                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
+                        Founded in 2022, YourToursAfrica was born from a deep love for the African continent and a desire to share its wonders with the world. We believe travel should transform, inspire, and create lasting memories.
+                    </p>
+                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
+                        Our team of passionate local experts curates journeys that go beyond typical tourism. We connect you with the real Africa—its people, wildlife, landscapes, and cultures—in ways that are sustainable, respectful, and truly unforgettable.
+                    </p>
+                    
+                    <!-- Values -->
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Sustainable Tourism</h4>
+                                <p class="text-gray-600">We partner with eco-friendly lodges and support local communities.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Personalized Service</h4>
+                                <p class="text-gray-600">Every trip is tailored to your preferences and travel style.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                <svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                                </svg>
+                            </div>
+                            <div>
+                                <h4 class="font-semibold text-gray-900">Expert Knowledge</h4>
+                                <p class="text-gray-600">Our guides share deep cultural insights and local wisdom.</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#contact" class="btn-primary inline-block px-8 py-4 rounded-full text-white font-semibold text-lg">
+                        Start Your Journey
+                    </a>
+                </div>
+            </div>
         </div>
     </section>
+
 
     <!-- Featured Tours Section -->
     <section id="tours" class="py-20 lg:py-28 bg-gradient-to-b from-gray-50 to-white african-pattern">
@@ -358,7 +417,7 @@
             <div class="text-center mb-16 reveal">
                 <span class="text-green-700 font-semibold text-sm uppercase tracking-wider">Our Packages</span>
                 <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-4">
-                    Popular Tour Packages
+                    Popular Tours 
                 </h2>
                 <p class="text-gray-600 max-w-2xl mx-auto text-lg">
                     Handcrafted journeys designed to immerse you in the authentic beauty and wonder of Africa.
@@ -370,26 +429,26 @@
                 <!-- Tour Card 1 -->
                 <article class="tour-card bg-white rounded-2xl shadow-lg overflow-hidden reveal">
                     <div class="relative h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?w=600&q=80" 
-                             alt="Serengeti Safari with wildebeest migration" 
+                        <img src="slider2.7.jpg" 
+                             alt="Cape Coast tours" 
                              class="w-full h-full object-cover"
                              loading="lazy">
                         <div class="absolute top-4 left-4 bg-red-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                             Bestseller
                         </div>
                         <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-gray-800">
-                            7 Days
+                            1 Day
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Serengeti Safari Adventure</h3>
-                        <p class="text-gray-600 mb-4">Witness the great migration and experience Tanzania's most iconic wildlife reserve.</p>
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Capecoast Tours</h3>
+                        <p class="text-gray-600 mb-4">Known as the heart of Ghana’s historical tourism. This tour typically centers on the Cape Coast Castle (a UNESCO World Heritage site) to learn about the Trans-Atlantic slave trade. It often includes a visit to the nearby Kakum National Park, famous for its thrilling canopy walkway high above the rainforest. As well as the Assin Manso Slave river site.</p>
                         <div class="flex items-center justify-between">
                             <div>
-                                <span class="text-gray-500 text-sm">Starting from</span>
-                                <p class="text-2xl font-bold text-green-700">$2,499</p>
+                                <span class="text-gray-500 text-sm">Starting</span>
+                                <p class="text-2xl font-bold text-green-700">$150</p>
                             </div>
-                            <a href="#contact" class="bg-green-700 hover:bg-green-800 text-white px-5 py-2 rounded-full font-semibold transition-colors">
+                            <a href="https://wa.link/j75owh" target="_blank" class="bg-green-700 hover:bg-green-800 text-white px-5 py-2 rounded-full font-semibold transition-colors">
                                 Book Now
                             </a>
                         </div>
@@ -404,21 +463,21 @@
                              class="w-full h-full object-cover"
                              loading="lazy">
                         <div class="absolute top-4 left-4 bg-yellow-500 text-black px-3 py-1 rounded-full text-sm font-semibold">
-                            Adventure
+                             Bestseller
                         </div>
                         <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-gray-800">
                             10 Days
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Kilimanjaro Summit Trek</h3>
-                        <p class="text-gray-600 mb-4">Conquer Africa's highest peak with expert guides on the Machame route.</p>
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Accra City Tours</h3>
+                        <p class="text-gray-600 mb-4">A vibrant exploration of Ghana's capital. Highlights include the Kwame Nkrumah Memorial Park, the colorful Makola Market, the historic Jamestown district, and Independence Square. It’s the best way to experience the blend of colonial history and modern West African urban life.</p>
                         <div class="flex items-center justify-between">
                             <div>
                                 <span class="text-gray-500 text-sm">Starting from</span>
-                                <p class="text-2xl font-bold text-green-700">$3,299</p>
+                                <p class="text-2xl font-bold text-green-700">$95</p>
                             </div>
-                            <a href="#contact" class="bg-green-700 hover:bg-green-800 text-white px-5 py-2 rounded-full font-semibold transition-colors">
+                            <a href="https://wa.link/8t6jl6" target="_blank" class="bg-green-700 hover:bg-green-800 text-white px-5 py-2 rounded-full font-semibold transition-colors">
                                 Book Now
                             </a>
                         </div>
@@ -433,118 +492,31 @@
                              class="w-full h-full object-cover"
                              loading="lazy">
                         <div class="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            Nature
+                             Bestseller
                         </div>
                         <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-gray-800">
                             5 Days
                         </div>
                     </div>
                     <div class="p-6">
-                        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Victoria Falls & Zambezi</h3>
-                        <p class="text-gray-600 mb-4">Experience the thundering majesty of Victoria Falls and river adventures.</p>
+                        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Kumasi City Tours</h3>
+                        <p class="text-gray-600 mb-4">A journey into the "Garden City" and the seat of the Ashanti Empire. You’ll visit the Manhyia Palace Museum, the massive Kejetia Market (one of the largest in West Africa), and nearby craft villages like Bonwire, where the world-famous Kente cloth is woven.</p>
                         <div class="flex items-center justify-between">
                             <div>
                                 <span class="text-gray-500 text-sm">Starting from</span>
-                                <p class="text-2xl font-bold text-green-700">$1,899</p>
+                                <p class="text-2xl font-bold text-green-700">$300</p>
                             </div>
-                            <a href="#contact" class="bg-green-700 hover:bg-green-800 text-white px-5 py-2 rounded-full font-semibold transition-colors">
-                                Book Now
-                            </a>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- Tour Card 4 -->
-                <article class="tour-card bg-white rounded-2xl shadow-lg overflow-hidden reveal">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1504598318550-17eba1008a68?w=600&q=80" 
-                             alt="Gorilla trekking in Uganda rainforest" 
-                             class="w-full h-full object-cover"
-                             loading="lazy">
-                        <div class="absolute top-4 left-4 bg-purple-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            Wildlife
-                        </div>
-                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-gray-800">
-                            4 Days
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Uganda Gorilla Trekking</h3>
-                        <p class="text-gray-600 mb-4">Get up close with endangered mountain gorillas in their natural habitat.</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-gray-500 text-sm">Starting from</span>
-                                <p class="text-2xl font-bold text-green-700">$2,799</p>
-                            </div>
-                            <a href="#contact" class="bg-green-700 hover:bg-green-800 text-white px-5 py-2 rounded-full font-semibold transition-colors">
-                                Book Now
-                            </a>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- Tour Card 5 -->
-                <article class="tour-card bg-white rounded-2xl shadow-lg overflow-hidden reveal">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1523805009345-7448845a9e53?w=600&q=80" 
-                             alt="Cape Town coastal scenery" 
-                             class="w-full h-full object-cover"
-                             loading="lazy">
-                        <div class="absolute top-4 left-4 bg-blue-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            Cultural
-                        </div>
-                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-gray-800">
-                            8 Days
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Cape Town & Garden Route</h3>
-                        <p class="text-gray-600 mb-4">Explore South Africa's stunning coastline, vineyards, and vibrant cities.</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-gray-500 text-sm">Starting from</span>
-                                <p class="text-2xl font-bold text-green-700">$2,199</p>
-                            </div>
-                            <a href="#contact" class="bg-green-700 hover:bg-green-800 text-white px-5 py-2 rounded-full font-semibold transition-colors">
-                                Book Now
-                            </a>
-                        </div>
-                    </div>
-                </article>
-                
-                <!-- Tour Card 6 -->
-                <article class="tour-card bg-white rounded-2xl shadow-lg overflow-hidden reveal">
-                    <div class="relative h-64 overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1539768942893-daf53e448371?w=600&q=80" 
-                             alt="Morocco desert landscape with camels" 
-                             class="w-full h-full object-cover"
-                             loading="lazy">
-                        <div class="absolute top-4 left-4 bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
-                            Exotic
-                        </div>
-                        <div class="absolute bottom-4 right-4 bg-white/90 backdrop-blur-sm px-3 py-1 rounded-full text-sm font-semibold text-gray-800">
-                            6 Days
-                        </div>
-                    </div>
-                    <div class="p-6">
-                        <h3 class="font-display text-xl font-bold text-gray-900 mb-2">Morocco Desert Expedition</h3>
-                        <p class="text-gray-600 mb-4">Journey through ancient medinas and sleep under Saharan stars.</p>
-                        <div class="flex items-center justify-between">
-                            <div>
-                                <span class="text-gray-500 text-sm">Starting from</span>
-                                <p class="text-2xl font-bold text-green-700">$1,699</p>
-                            </div>
-                            <a href="#contact" class="bg-green-700 hover:bg-green-800 text-white px-5 py-2 rounded-full font-semibold transition-colors">
+                            <a href="https://wa.link/b1fv5u" target="_blank" class="bg-green-700 hover:bg-green-800 text-white px-5 py-2 rounded-full font-semibold transition-colors">
                                 Book Now
                             </a>
                         </div>
                     </div>
                 </article>
             </div>
-            
+
             <!-- View All Tours CTA -->
-            <div class="text-center mt-12 reveal">
-                <a href="#contact" class="inline-flex items-center gap-2 text-green-700 font-semibold text-lg hover:text-green-800 transition-colors">
+            <div class="flex justify-center mt-12 reveal">
+                <a href="Populartours.html" target="_blank" class="inline-flex items-center gap-2 text-green-700 font-semibold text-lg hover:text-green-800 transition-colors">
                     View All Tour Packages
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
@@ -897,7 +869,7 @@
                     Why Choose <span class="text-yellow-400">YourToursAfrica</span>
                 </h2>
                 <p class="text-gray-400 max-w-2xl mx-auto text-lg">
-                    We bring over 15 years of experience, local expertise, and passion to every journey.
+                    We bring over 5 years of experience, local expertise, and passion to every journey.
                 </p>
             </div>
             
@@ -910,7 +882,7 @@
                         </svg>
                     </div>
                     <h3 class="font-display text-xl font-bold mb-3">Safe & Secure</h3>
-                    <p class="text-gray-400">Your safety is our priority with vetted guides, insured trips, and 24/7 support.</p>
+                    <p class="text-gray-400">Your safety is our priority with vetted guides,24/7 support, insured and private trips.</p>
                 </div>
                 
                 <!-- Feature 2 -->
@@ -950,11 +922,11 @@
             <!-- Stats -->
             <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 text-center reveal">
                 <div>
-                    <p class="text-4xl lg:text-5xl font-bold text-yellow-400">15+</p>
+                    <p class="text-4xl lg:text-5xl font-bold text-yellow-400">5+</p>
                     <p class="text-gray-400 mt-2">Years Experience</p>
                 </div>
                 <div>
-                    <p class="text-4xl lg:text-5xl font-bold text-yellow-400">5000+</p>
+                    <p class="text-4xl lg:text-5xl font-bold text-yellow-400">500+</p>
                     <p class="text-gray-400 mt-2">Happy Travelers</p>
                 </div>
                 <div>
@@ -964,93 +936,6 @@
                 <div>
                     <p class="text-4xl lg:text-5xl font-bold text-yellow-400">4.9</p>
                     <p class="text-gray-400 mt-2">Average Rating</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="py-20 lg:py-28 bg-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-                <!-- Image Grid -->
-                <div class="relative reveal">
-                    <div class="grid grid-cols-2 gap-4">
-                        <img src="about1.jpeg" 
-                             alt="African sunset landscape" 
-                             class="rounded-2xl shadow-lg w-full h-48 object-cover"
-                             loading="lazy">
-                        <img src="about2.jpeg" 
-                             alt="Safari wildlife experience" 
-                             class="rounded-2xl shadow-lg w-full h-48 object-cover mt-8"
-                             loading="lazy">
-                        <img src="about3.jpeg" 
-                             alt="Cape Town coastal view" 
-                             class="rounded-2xl shadow-lg w-full h-48 object-cover -mt-4"
-                             loading="lazy">
-                        <img src="about4.jpeg" 
-                             alt="African cultural experience" 
-                             class="rounded-2xl shadow-lg w-full h-48 object-cover mt-4"
-                             loading="lazy">
-                    </div>
-                    <!-- Decorative element -->
-                    <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-yellow-400 rounded-full opacity-20 -z-10"></div>
-                    <div class="absolute -top-6 -left-6 w-24 h-24 bg-green-700 rounded-full opacity-20 -z-10"></div>
-                </div>
-                
-                <!-- Content -->
-                <div class="reveal">
-                    <span class="text-green-700 font-semibold text-sm uppercase tracking-wider">About Us</span>
-                    <h2 class="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-6">
-                        Your Gateway to <span class="text-green-700">Authentic</span> African Adventures
-                    </h2>
-                    <p class="text-gray-600 text-lg mb-6 leading-relaxed">
-                        Founded in 2009, YourToursAfrica was born from a deep love for the African continent and a desire to share its wonders with the world. We believe travel should transform, inspire, and create lasting memories.
-                    </p>
-                    <p class="text-gray-600 text-lg mb-8 leading-relaxed">
-                        Our team of passionate local experts curates journeys that go beyond typical tourism. We connect you with the real Africa—its people, wildlife, landscapes, and cultures—in ways that are sustainable, respectful, and truly unforgettable.
-                    </p>
-                    
-                    <!-- Values -->
-                    <div class="space-y-4 mb-8">
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900">Sustainable Tourism</h4>
-                                <p class="text-gray-600">We partner with eco-friendly lodges and support local communities.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900">Personalized Service</h4>
-                                <p class="text-gray-600">Every trip is tailored to your preferences and travel style.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-4">
-                            <div class="w-10 h-10 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
-                                <svg class="w-5 h-5 text-green-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                                </svg>
-                            </div>
-                            <div>
-                                <h4 class="font-semibold text-gray-900">Expert Knowledge</h4>
-                                <p class="text-gray-600">Our guides share deep cultural insights and local wisdom.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <a href="#contact" class="btn-primary inline-block px-8 py-4 rounded-full text-white font-semibold text-lg">
-                        Start Your Journey
-                    </a>
                 </div>
             </div>
         </div>
@@ -1161,7 +1046,7 @@
             <!-- Gallery Grid -->
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1">
                 <div class="gallery-item rounded-2xl overflow-hidden reveal">
-                    <img src="gallery1.jpeg" 
+                    <img src="slider2.5.jpg" 
                          alt="Elephant herd at sunset" 
                          class="w-full object-cover"
                          loading="lazy">
@@ -1179,115 +1064,31 @@
                          loading="lazy">
                 </div>
                 <div class="gallery-item rounded-2xl overflow-hidden reveal">
-                    <img src="gallery4.jpeg" 
+                    <img src="gallery28.jpeg" 
                          alt="Victoria Falls rainbow" 
                          class="w-full object-contain"
                          loading="lazy">
                 </div>
                 <div class="gallery-item rounded-2xl overflow-hidden reveal">
-                    <img src="gallery6.jpeg" 
+                    <img src="slider2.3.jpg" 
                          alt="Mount Kilimanjaro peak" 
                          class="w-full object-contain"
                          loading="lazy">
                 </div>
                 <div class="gallery-item rounded-2xl overflow-hidden reveal">
-                    <img src="gallery7.jpeg" 
+                    <img src="gallery9.jpeg" 
                          alt="Mountain gorilla portrait" 
                          class="w-full object-cover"
                          loading="lazy">
                 </div>
-                <div class="gallery-item rounded-2xl overflow-hidden reveal">
-                    <img src="gallery8.jpeg" 
-                         alt="Sahara desert dunes" 
-                         class="w-full object-cover"
-                         loading="lazy">
-                </div>
-                <div class="gallery-item rounded-2xl overflow-hidden reveal">
-                    <img src="gallery9.jpeg" 
-                         alt="African tribal dance" 
-                         class="w-full object-contain"
-                         loading="lazy">
-                </div>
-                <div class="gallery-item rounded-2xl overflow-hidden reveal">
-                    <img src="gallery10.jpeg" 
-                         alt="African sunset" 
-                         class="w-full object-cover"
-                         loading="lazy">
-                </div>
-                <div class="gallery-item rounded-2xl overflow-hidden reveal">
-                    <img src="gallery11.jpeg" 
-                         alt="Lion close-up" 
-                         class="w-full object-cover"
-                         loading="lazy">
-                </div>
-                <div class="gallery-item rounded-2xl overflow-hidden reveal">
-                    <img src="gallery12.jpeg" 
-                         alt="Lion close-up" 
-                         class="w-full object-cover"
-                         loading="lazy">
-                </div>
-                <div class="gallery-item rounded-2xl overflow-hidden reveal">
-                    <img src="gallery13.jpeg" 
-                         alt="Lion close-up" 
-                         class="w-full object-contain"
-                         loading="lazy">
-                </div>
-                <div class="gallery-item rounded-2xl overflow-hidden reveal">
-                    <img src="gallery14.jpeg" 
-                         alt="Lion close-up" 
-                         class="w-full object-contain"
-                         loading="lazy">
-                </div>
-                <div class="gallery-item rounded-2xl overflow-hidden reveal">
-                    <img src="gallery16.jpeg" 
-                         alt="Lion close-up" 
-                         class="w-full object-cover"
-                         loading="lazy">
-                </div>
-                <div class="gallery-item rounded-2xl overflow-hidden reveal">
-                    <img src="gallery20.jpeg" 
-                         alt="Lion close-up" 
-                         class="w-full object-cover"
-                         loading="lazy">
-                </div>
-                <div class="gallery-item rounded-2xl overflow-hidden reveal">
-                    <img src="gallery21.jpeg" 
-                         alt="Lion close-up" 
-                         class="w-full object-cover"
-                         loading="lazy">
-                </div>
-                <div class="gallery-item rounded-2xl overflow-hidden reveal">
-                    <img src="gallery25.jpeg" 
-                         alt="Lion close-up" 
-                         class="w-full object-contain"
-                         loading="lazy">
-                </div>
-                <div class="gallery-item rounded-2xl overflow-hidden reveal">
-                    <img src="gallery26.jpeg" 
-                         alt="Lion close-up" 
-                         class="w-full object-cover"
-                         loading="lazy">
-                </div>
-                <div class="gallery-item rounded-2xl overflow-hidden reveal">
-                    <img src="gallery27.jpeg" 
-                         alt="Lion close-up" 
-                         class="w-full object-cover"
-                         loading="lazy">
-                </div>
-                <div class="gallery-item rounded-2xl overflow-hidden reveal">
-                    <img src="gallery28.jpeg" 
-                         alt="Lion close-up" 
-                         class="w-full object-cover"
-                         loading="lazy">
-                </div>
-                <div class="gallery-item rounded-2xl overflow-hidden reveal">
-                    <img src="gallery35.jpeg" 
-                         alt="Lion close-up" 
-                         class="w-full object-cover"
-                         loading="lazy">
-                </div>
-            
             </div>
+
+            <div class="flex justify-center mt-8 reveal">
+                <a href="gallery.html" target="_blank" class="btn-primary px-8 py-4 rounded-full text-white font-semibold text-lg shadow-lg">
+                    Explore More Photos
+                </a>
+            </div>
+           
         </div>
     </section>
 
@@ -1321,6 +1122,31 @@
         </div>
     </section>
 
+    <!-- Donation Section -->
+    <section id="donate" class="py-20 lg:py-28 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 reveal">
+                <span class="text-green-700 font-semibold text-sm uppercase tracking-wider">Support Us</span>
+                <h2 class="font-display text-3xl sm:text-4xl font-bold text-gray-900 mt-3 mb-4">Make a Donation</h2>
+                <p class="text-gray-600 max-w-2xl mx-auto">Support the site by sending your donation directly to our mobile money number. After payment, please send proof to info@yourtoursafrica.com.</p>
+            </div>
+
+            <div class="flex justify-center">
+                <div class="bg-white p-8 rounded-2xl shadow reveal w-full max-w-md text-center">
+                    <h3 class="font-semibold text-xl mb-4">Mobile Money Donation</h3>
+                    <div class="mb-6">
+                        <p class="text-gray-600 mb-2">Send your donation to:</p>
+                        <div class="bg-green-50 border-2 border-green-200 rounded-lg p-4">
+                            <p class="text-2xl font-bold text-green-700">054 680 2943</p>
+                            <p class="text-sm text-gray-600 mt-1">MTN Mobile Money</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-600">Please include your name and email in the payment reference so we can thank you properly!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Contact Section -->
     <section id="contact" class="py-20 lg:py-28 bg-white">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -1345,7 +1171,7 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold text-gray-900">Visit Us</h4>
-                                <p class="text-gray-600">123 Safari Avenue, Nairobi, Kenya</p>
+                                <p class="text-gray-600">No. 10 Parks and Gardens RD. Medie Accra Ghana</p>
                             </div>
                         </div>
                         
@@ -1357,7 +1183,7 @@
                             </div>
                             <div>
                                 <h4 class="font-semibold text-gray-900">Call Us</h4>
-                                <p class="text-gray-600">+254 700 123 456</p>
+                                <p class="text-gray-600">+233 546 802 943 / +233 209 352 471</p>
                             </div>
                         </div>
                         
@@ -1416,13 +1242,18 @@
                                 <select id="tour" name="tour"
                                         class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-green-500 focus:border-transparent transition-all outline-none bg-white">
                                     <option value="">Select a tour package</option>
-                                    <option value="serengeti">Serengeti Safari Adventure</option>
-                                    <option value="kilimanjaro">Kilimanjaro Summit Trek</option>
-                                    <option value="victoria">Victoria Falls & Zambezi</option>
-                                    <option value="gorilla">Uganda Gorilla Trekking</option>
-                                    <option value="capetown">Cape Town & Garden Route</option>
-                                    <option value="morocco">Morocco Desert Expedition</option>
-                                    <option value="custom">Custom Tour</option>
+                                    <option value="serengeti">CapeCoast Tours</option>
+                                    <option value="kilimanjaro">Accra City Tour</option>
+                                    <option value="victoria">Kumasi City Tour</option>
+                                    <option value="gorilla">Aburi Tours</option>
+                                    <option value="capetown">Akosombo Tours</option>
+                                    <option value="morocco">Safari Valley Eco Tours</option>
+                                    <option value="custom">Crown Forest Tour</option>
+                                    <option value="custom">Ada Tours</option>
+                                    <option value="custom">Volta Tours</option>
+                                    <option value="custom">Shai Hills Tours</option>
+                                    <option value="custom">Northen Tour</option>
+                                
                                 </select>
                             </div>
                             
@@ -1466,8 +1297,15 @@
                              loading="lazy">
                         <span class="font-display text-xl font-bold">YourToursAfrica</span>
                     </a>
+                    <span>YourToursAfrica is powered by</span>
+    <img 
+        src="logo2.jpeg"
+        alt="GINSINC Logo"
+        class="h-50 w-50 sm:w-40 sm:h-40 object-contain"
+        loading="lazy">
+        
                     <p class="text-gray-600 mb-6">
-                        Creating unforgettable African adventures since 2009. Let us guide you through the wonders of the continent.
+                        Creating unforgettable African adventures since 2022. Let us guide you through the wonders of the continent.
                     </p>
                     <div class="flex gap-4">
                         <a href="#" class="w-10 h-10 bg-gray-200 hover:bg-green-700 rounded-full flex items-center justify-center transition-colors" aria-label="Facebook">
@@ -1489,7 +1327,7 @@
                         <li><a href="#home" class="text-gray-600 hover:text-yellow-400 transition-colors">Home</a></li>
                         <li><a href="#tours" class="text-gray-600 hover:text-yellow-400 transition-colors">Tours</a></li>
                         <li><a href="#about" class="text-gray-600 hover:text-yellow-400 transition-colors">About Us</a></li>
-                        <li><a href="#gallery" class="text-gray-600 hover:text-yellow-400 transition-colors">Gallery</a></li>
+                        <li><a href="gallery.html" class="text-gray-600 hover:text-yellow-400 transition-colors">Gallery</a></li>
                         <li><a href="#contact" class="text-gray-600 hover:text-yellow-400 transition-colors">Contact</a></li>
                     </ul>
                 </div>
@@ -1498,11 +1336,11 @@
                 <div>
                     <h4 class="font-semibold text-lg mb-6">Popular Tours</h4>
                     <ul class="space-y-3">
-                        <li><a href="#tours" class="text-gray-600 hover:text-yellow-400 transition-colors">Serengeti Safari</a></li>
-                        <li><a href="#tours" class="text-gray-600 hover:text-yellow-400 transition-colors">Kilimanjaro Trek</a></li>
-                        <li><a href="#tours" class="text-gray-600 hover:text-yellow-400 transition-colors">Victoria Falls</a></li>
-                        <li><a href="#tours" class="text-gray-600 hover:text-yellow-400 transition-colors">Gorilla Trekking</a></li>
-                        <li><a href="#tours" class="text-gray-600 hover:text-yellow-400 transition-colors">Cape Town Tour</a></li>
+                        <li><a href="#tours" class="text-gray-600 hover:text-yellow-400 transition-colors">CapeCoast City Tours</a></li>
+                        <li><a href="#tours" class="text-gray-600 hover:text-yellow-400 transition-colors">Accra City Tour</a></li>
+                        <li><a href="#tours" class="text-gray-600 hover:text-yellow-400 transition-colors">Kumasi City Tour</a></li>
+                        <li><a href="#tours" class="text-gray-600 hover:text-yellow-400 transition-colors">Ada City Tour</a></li>
+                        <li><a href="#tours" class="text-gray-600 hover:text-yellow-400 transition-colors">Crown Forest Tour</a></li>
                     </ul>
                 </div>
                 
@@ -1532,6 +1370,12 @@
                 </div>
             </div>
         </div>
+
+        <div class="flex items-center justify-center gap-2 text-xs text-gray-500">
+</div>
+
+
+
     </footer>
 
     <!-- Back to Top Button -->
@@ -1700,7 +1544,7 @@
         const heroSlider = {
             slides: document.querySelectorAll('.hero-slide'),
             currentSlide: 0,
-            slideCount: 5,
+            slideCount: 6,
             autoPlayInterval: null,
             autoPlayDelay: 5000, // 5 seconds per slide
             isAnimating: false,
@@ -1791,6 +1635,41 @@
 
         // Initialize slider
         heroSlider.init();
+    </script>
+    <script>
+        // Donation section JS — improved inline validation and feedback
+        function showFeedback(el, message, type = 'error') {
+            if (!el) return;
+            el.textContent = message;
+            el.classList.remove('hidden');
+            el.classList.remove('text-red-600', 'text-green-700');
+            if (type === 'error') el.classList.add('text-red-600');
+            else el.classList.add('text-green-700');
+            // Auto-hide success messages after 4s
+            if (type === 'success') setTimeout(() => el.classList.add('hidden'), 4000);
+        }
+
+        function clearFeedback(el) {
+            if (!el) return;
+            el.textContent = '';
+            el.classList.add('hidden');
+        }
+
+        function copyTextToClipboard(text, feedbackEl) {
+            if (!navigator.clipboard) {
+                showFeedback(feedbackEl, 'Clipboard API not available — copy manually.', 'error');
+                return Promise.reject();
+            }
+            return navigator.clipboard.writeText(text).then(() => {
+                showFeedback(feedbackEl, 'Copied to clipboard', 'success');
+            }).catch(() => {
+                showFeedback(feedbackEl, 'Copy failed — please copy manually', 'error');
+            });
+        }
+
+
+
+
     </script>
 </body>
 </html>

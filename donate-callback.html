@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Donation Status — YourToursAfrica</title>
+  <style>
+    body { font-family: Inter, sans-serif; display:flex; align-items:center; justify-content:center; min-height:100vh; background:#f7fafc; margin:0 }
+    .card { background:white; padding:2rem; border-radius:12px; box-shadow:0 10px 30px rgba(0,0,0,0.08); max-width:640px; width:100%; text-align:center }
+    .muted { color:#6b7280 }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1 id="status">Verifying payment...</h1>
+    <p id="detail" class="muted">Please wait while we verify your payment.</p>
+    <p id="ref" class="muted"></p>
+    <p style="margin-top:1rem"><a id="homeLink" href="/">Return home</a></p>
+  </div>
+
+  <script>
+    (async function(){
+      const params = new URLSearchParams(location.search);
+      const reference = params.get('reference') || params.get('trxref') || '';
+      const statusEl = document.getElementById('status');
+      const detailEl = document.getElementById('detail');
+      const refEl = document.getElementById('ref');
+
+      if (!reference) {
+        statusEl.textContent = 'No payment reference provided.';
+        detailEl.textContent = 'Redirecting to home...';
+        setTimeout(() => location.href='/', 3000);
+        return;
+      }
+
+      refEl.textContent = 'Reference: ' + reference;
+
+      try {
+        const res = await fetch('http://localhost:5000/api/paystack/verify/' + encodeURIComponent(reference));
+        const json = await res.json();
+        if (res.ok && json && json.data && json.data.status === 'success') {
+          statusEl.textContent = 'Payment successful — thank you!';
+          detailEl.textContent = 'You will be redirected to the home page shortly.';
+          setTimeout(() => location.href='/', 4000);
+        } else {
+          statusEl.textContent = 'Payment not successful';
+          detailEl.textContent = (json && json.message) || (json && json.data && json.data.gateway_response) || 'If you were charged, please contact support.';
+        }
+      } catch (err) {
+        statusEl.textContent = 'Verification failed';
+        detailEl.textContent = 'Could not verify payment. Please contact support.';
+        console.error(err);
+      }
+    })();
+  </script>
+</body>
+</html>
